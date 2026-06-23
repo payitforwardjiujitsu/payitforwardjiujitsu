@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+  <meta name="color-scheme" content="light">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="フルタイム月16,500円〜。入会金11,000円。初回無料体験受付中。キッズ・レディース・8DAYSプランあり。">
+  <meta name="keywords" content="料金,月会費,入会金,体験,柔術,信濃町,フルタイム,キッズ,レディース">
+  <meta name="robots" content="index, follow">
+  <title>料金プラン｜Pay it Forward JIU-JITSU</title>
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="料金プラン｜Pay it Forward JIU-JITSU">
+  <meta property="og:description" content="フルタイム月16,500円〜。入会金11,000円。初回無料体験受付中。キッズ・レディース・8DAYSプランあり。">
+  <meta property="og:url" content="https://mrx-lab13.github.io/test/pricing.html">
+  <meta property="og:image" content="https://mrx-lab13.github.io/test/logo.png">
+  <meta property="og:site_name" content="Pay it Forward JIU-JITSU">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="料金プラン｜Pay it Forward JIU-JITSU">
+  <meta name="twitter:description" content="フルタイム月16,500円〜。入会金11,000円。初回無料体験受付中。キッズ・レディース・8DAYSプランあり。">
+  <meta name="twitter:image" content="https://mrx-lab13.github.io/test/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- 表示速度最適化 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .pricing-section {
+      padding: 72px 40px 56px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* 4カラムカード */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .pricing-card {
+      border: 1px solid var(--gray-mid);
+      padding: 28px 16px;
+      text-align: center;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--black);
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .pricing-type {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .pricing-sub {
+      font-size: 12px;
+      color: var(--gray-text);
+      margin-bottom: 20px;
+      min-height: 18px;
+    }
+
+    .pricing-card.featured .pricing-sub { color: #aaa; }
+
+    .pricing-price {
+      font-family: var(--font-serif);
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 2px;
+    }
+
+    .pricing-unit {
+      font-size: 12px;
+      color: var(--gray-text);
+      margin-bottom: 20px;
+    }
+
+    .pricing-card.featured .pricing-unit { color: #aaa; }
+
+    .pricing-features {
+      font-size: 12px;
+      line-height: 2;
+      color: #555;
+      border-top: 1px solid var(--gray-mid);
+      padding-top: 16px;
+    }
+
+    .pricing-card.featured .pricing-features {
+      color: #ccc;
+      border-top-color: #444;
+    }
+
+    .pricing-notes {
+      font-size: 12px;
+      color: var(--gray-text);
+      line-height: 2;
+    }
+
+    .pricing-notes p::before { content: '※ '; }
+
+    /* お問い合わせ */
+    .contact-section {
+      padding: 56px 40px 72px;
+      max-width: 960px;
+      margin: 0 auto;
+      border-top: 1px solid var(--gray-mid);
+    }
+
+    .contact-intro {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-top: -24px;
+      margin-bottom: 48px;
+      line-height: 2;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      border: 1px solid var(--gray-mid);
+      padding: 32px 20px;
+      text-align: center;
+    }
+
+    .contact-card.line-card {
+      background: #06c755;
+      border-color: #06c755;
+      color: var(--white);
+    }
+
+    .contact-icon { display: flex; justify-content: center; margin-bottom: 14px; }
+    .contact-type { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .contact-desc { font-size: 12px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+    .contact-card.line-card .contact-desc { color: rgba(255,255,255,0.85); }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    }
+
+    .contact-link:hover { opacity: 0.6; }
+    .contact-card.line-card .contact-link { color: var(--white); border-bottom-color: var(--white); }
+
+    /* ===== TABLET ===== */
+    @media (max-width: 1024px) {
+      .pricing-section, .contact-section { padding-left: 24px; padding-right: 24px; }
+      .pricing-grid { gap: 10px; }
+      .pricing-price { font-size: 26px; }
+    }
+
+    /* ===== SP ===== */
+    @media (max-width: 768px) {
+      .pricing-section { padding: 40px 20px 36px; }
+      .contact-section { padding: 36px 20px 56px; }
+      .contact-intro { font-size: 13px; margin-bottom: 32px; }
+
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .contact-grid { grid-template-columns: 1fr; gap: 12px; }
+      .contact-card { padding: 24px 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .pricing-grid { grid-template-columns: 1fr; gap: 8px; }
+      .pricing-card { padding: 20px 16px; }
+    }
+
+    /* ===== 入会金 ===== */
+    .pricing-entry {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 480px;
+      margin: 0 auto 40px;
+      padding: 16px 24px;
+      border: 1.5px solid var(--black);
+    }
+
+    .pricing-entry-label {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .pricing-entry-price {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .pricing-entry-tax {
+      font-size: 12px;
+      font-weight: 400;
+      font-family: var(--font-sans);
+      color: var(--gray-text);
+      margin-left: 4px;
+    }
+
+    /* ===== プラン一覧 ===== */
+    .pricing-list {
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+
+    .pricing-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 24px;
+      align-items: start;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--gray-mid);
+    }
+
+    .pricing-row:first-child { border-top: 1px solid var(--gray-mid); }
+
+    .pricing-row-name {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+
+    .pricing-row-price {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .pricing-row-price .tax {
+      font-size: 11px;
+      font-weight: 400;
+      font-family: var(--font-sans);
+      color: var(--gray-text);
+      margin-left: 4px;
+    }
+
+    .pricing-row-desc {
+      font-size: 13px;
+      line-height: 1.9;
+      color: #555;
+      padding-top: 4px;
+    }
+
+    /* ===== 無料体験 ===== */
+    .pricing-trial {
+      max-width: 720px;
+      margin: 0 auto 32px;
+      background: var(--gray-light);
+      padding: 36px 40px;
+    }
+
+    .pricing-trial-badge {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 3px 12px;
+      margin-bottom: 14px;
+    }
+
+    .pricing-trial-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .pricing-trial-body {
+      font-size: 13px;
+      line-height: 2;
+      color: #444;
+    }
+
+    .pricing-note {
+      font-size: 12px;
+      color: var(--gray-text);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .pricing-entry { max-width: 100%; }
+      .pricing-row { grid-template-columns: 1fr; gap: 8px; }
+      .pricing-trial { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <header class="site-header">
+      <a href="index.html" class="site-logo">
+        <img src="logo.png" alt="Pay it Forward Jiu-Jitsu ロゴ">
+        <div><div class="logo-text">Pay it Forward</div><div class="logo-sub">— JIU-JITSU —</div></div>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">ホーム</a>
+        <a href="concept.html">コンセプト</a>
+        <a href="schedule.html">クラススケジュール</a>
+        <a href="instructor.html">インストラクター</a>
+        <a href="access.html">アクセス</a>
+        <a href="pricing.html" class="active">料金プラン</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="contact.html" class="btn-cta">無料体験のご予約</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">ホーム</a>
+      <a href="concept.html">コンセプト</a>
+      <a href="schedule.html">クラススケジュール</a>
+      <a href="instructor.html">インストラクター</a>
+      <a href="access.html">アクセス</a>
+      <a href="pricing.html">料金プラン</a>
+      <a href="news.html">お知らせ</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="contact.html" class="btn-cta">無料体験のご予約</a>
+    </div>
+
+    <main>
+
+      <!-- 料金プラン -->
+      <section class="pricing-section">
+        <h2 class="section-title">料金プラン</h2>
+
+        <!-- 入会金 -->
+        <div class="pricing-entry">
+          <span class="pricing-entry-label">入会金</span>
+          <span class="pricing-entry-price">¥11,000<span class="pricing-entry-tax">（税込）</span></span>
+        </div>
+
+        <!-- プラン一覧 -->
+        <div class="pricing-list">
+
+          <div class="pricing-row">
+            <div class="pricing-row-left">
+              <p class="pricing-row-name">フルタイム</p>
+              <p class="pricing-row-price">¥16,500<span class="tax">（税込）/ 月</span></p>
+            </div>
+            <p class="pricing-row-desc">毎日、全てのクラスにご参加いただけるプランです。</p>
+          </div>
+
+          <div class="pricing-row">
+            <div class="pricing-row-left">
+              <p class="pricing-row-name">レディース</p>
+              <p class="pricing-row-price">¥14,300<span class="tax">（税込）/ 月</span></p>
+            </div>
+            <p class="pricing-row-desc">フルタイムと同じサービスを女性限定価格でご利用いただけます。</p>
+          </div>
+
+          <div class="pricing-row">
+            <div class="pricing-row-left">
+              <p class="pricing-row-name">8DAYS</p>
+              <p class="pricing-row-price">¥14,300<span class="tax">（税込）/ 月</span></p>
+            </div>
+            <p class="pricing-row-desc">週2回ペースの方におすすめのプランです。月に8日、選んだ日は複数のクラスにご参加いただけます。（※ 追加利用料金1日 ¥2,200）</p>
+          </div>
+
+          <div class="pricing-row">
+            <div class="pricing-row-left">
+              <p class="pricing-row-name">キッズ</p>
+              <p class="pricing-row-price">¥11,000<span class="tax">（税込）/ 月</span></p>
+            </div>
+            <p class="pricing-row-desc">キッズクラス限定のプランです。</p>
+          </div>
+
+          <div class="pricing-row">
+            <div class="pricing-row-left">
+              <p class="pricing-row-name">福利厚生<br>プログラム</p>
+              <p class="pricing-row-price" style="font-size:14px;font-family:var(--font-sans);font-weight:500;">要お問い合わせ</p>
+            </div>
+            <p class="pricing-row-desc">従業員の健康づくりや運動不足解消、チームコミュニケーションの活性化を目的とした法人様向けプログラムです。ブラジリアン柔術を通じて、体力向上はもちろん、ストレス発散やリフレッシュのサポートをいたします。実施人数や頻度、ご要望に応じて貴社オリジナルのプログラムをご提案いたします。健康経営の一環として、ぜひご活用ください。</p>
+          </div>
+
+        </div>
+
+        <!-- 無料体験 -->
+        <div class="pricing-trial">
+          <p class="pricing-trial-badge">初回限定</p>
+          <p class="pricing-trial-title">未経験者のための無料体験</p>
+          <p class="pricing-trial-body">Pay it Forward JIU-JITSUでは、ブラジリアン柔術が初めての方（未経験者の方）を対象に、常時、初回無料での体験レッスンを受け付けております。</p>
+          <a href="contact.html" class="btn-primary" style="margin-top:20px;">
+            無料体験に申し込む
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <p class="pricing-note">※ 料金は変更になる場合があります。</p>
+
+      </section>
+
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-logo">
+        <img src="logo.png" alt="ロゴ">
+        <div><div class="footer-logo-name">Pay it Forward</div><div class="footer-logo-tagline">自然豊かな新宿・信濃町の柔術ジム</div></div>
+      </div>
+      <div class="footer-copy">&copy; 2025 Pay it Forward Jiu-Jitsu All Rights Reserved.</div>
+      <div class="footer-sns">
+        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>Instagram</a>
+        <span class="footer-sns-handle">@payitforwardjujitsu</span>
+      </div>
+    </footer>
+
+  </div>
+  <script>
+    var ham = document.getElementById('hamburger');
+    var menu = document.getElementById('mobileMenu');
+    ham.addEventListener('click', function() { ham.classList.toggle('open'); menu.classList.toggle('open'); document.body.classList.toggle('menu-open'); });
+    menu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', function() { ham.classList.remove('open'); menu.classList.remove('open'); document.body.classList.remove('menu-open'); }); });
+  </script>
+</body>
+</html>

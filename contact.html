@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+  <meta name="color-scheme" content="light">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="無料体験・見学のお申し込みはこちら。LINEまたはメールフォームで24時間受付中。初心者・女性・キッズ歓迎。">
+  <meta name="keywords" content="お問い合わせ,無料体験,見学,申込み,柔術,信濃町,LINE">
+  <meta name="robots" content="index, follow">
+  <title>お問い合わせ・無料体験｜Pay it Forward JIU-JITSU</title>
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="お問い合わせ・無料体験｜Pay it Forward JIU-JITSU">
+  <meta property="og:description" content="無料体験・見学のお申し込みはこちら。LINEまたはメールフォームで24時間受付中。初心者・女性・キッズ歓迎。">
+  <meta property="og:url" content="https://mrx-lab13.github.io/test/contact.html">
+  <meta property="og:image" content="https://mrx-lab13.github.io/test/logo.png">
+  <meta property="og:site_name" content="Pay it Forward JIU-JITSU">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="お問い合わせ・無料体験｜Pay it Forward JIU-JITSU">
+  <meta name="twitter:description" content="無料体験・見学のお申し込みはこちら。LINEまたはメールフォームで24時間受付中。初心者・女性・キッズ歓迎。">
+  <meta name="twitter:image" content="https://mrx-lab13.github.io/test/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- 表示速度最適化 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+  <link rel="stylesheet" href="common.css">
+  <style>
+    /* ===== カードセクション ===== */
+    .contact-cards-section {
+      padding: 56px 40px 0;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      border: 1px solid var(--gray-mid);
+      padding: 32px 20px;
+      text-align: center;
+    }
+
+    .contact-card.line-card {
+      background: #06c755;
+      border-color: #06c755;
+      color: var(--white);
+    }
+
+    .contact-icon { display: flex; justify-content: center; margin-bottom: 14px; }
+    .contact-type { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .contact-desc { font-size: 12px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+    .contact-card.line-card .contact-desc { color: rgba(255,255,255,0.85); }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    }
+
+    .contact-link:hover { opacity: 0.6; }
+    .contact-card.line-card .contact-link { color: var(--white); border-bottom-color: var(--white); }
+
+    /* ===== フォームセクション ===== */
+    .contact-page {
+      padding: 56px 40px 72px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .contact-intro {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-top: -24px;
+      margin-bottom: 48px;
+      line-height: 2;
+    }
+
+    .form-group { margin-bottom: 22px; }
+
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    .required {
+      color: #c0392b;
+      font-size: 11px;
+      font-weight: 400;
+      margin-left: 4px;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--gray-mid);
+      background: var(--white);
+      font-size: 14px;
+      font-family: var(--font-sans);
+      outline: none;
+      border-radius: 0;
+      appearance: none;
+      -webkit-appearance: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus { border-color: var(--black); }
+
+    .form-textarea { height: 140px; resize: vertical; }
+
+    /* プライバシーポリシー */
+    .privacy-box {
+      margin-top: 28px;
+      padding: 20px;
+      background: var(--gray-light);
+      font-size: 13px;
+      line-height: 2;
+      color: #555;
+      text-align: center;
+    }
+
+    .privacy-box a {
+      color: var(--black);
+      border-bottom: 1px solid var(--black);
+    }
+
+    .privacy-agree {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 14px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .privacy-agree input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      accent-color: var(--black);
+    }
+
+    .form-submit { margin-top: 28px; }
+
+    .form-submit button {
+      width: 100%;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      padding: 15px;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: var(--font-sans);
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .form-submit button:hover { opacity: 0.75; }
+
+    .form-note {
+      font-size: 12px;
+      color: var(--gray-text);
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    /* ===== TABLET ===== */
+    @media (max-width: 1024px) {
+      .contact-cards-section { padding: 48px 24px 0; }
+      .contact-page { padding: 48px 24px 56px; }
+    }
+
+    /* ===== SP ===== */
+    @media (max-width: 768px) {
+      .contact-cards-section { padding: 40px 20px 0; }
+      .contact-grid { grid-template-columns: 1fr; gap: 12px; }
+      .contact-card { padding: 24px 20px; }
+      .contact-page { padding: 40px 20px 56px; }
+      .contact-intro { font-size: 13px; margin-bottom: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <header class="site-header">
+      <a href="index.html" class="site-logo">
+        <img src="logo.png" alt="Pay it Forward Jiu-Jitsu ロゴ">
+        <div><div class="logo-text">Pay it Forward</div><div class="logo-sub">— JIU-JITSU —</div></div>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">ホーム</a>
+        <a href="concept.html">コンセプト</a>
+        <a href="schedule.html">クラススケジュール</a>
+        <a href="instructor.html">インストラクター</a>
+        <a href="access.html">アクセス</a>
+        <a href="pricing.html">料金プラン</a>
+        <a href="news.html">お知らせ</a>
+        <a href="contact.html" class="active">お問い合わせ</a>
+        <a href="contact.html" class="btn-cta">無料体験のご予約</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">ホーム</a>
+      <a href="concept.html">コンセプト</a>
+      <a href="schedule.html">クラススケジュール</a>
+      <a href="instructor.html">インストラクター</a>
+      <a href="access.html">アクセス</a>
+      <a href="pricing.html">料金プラン</a>
+      <a href="news.html">お知らせ</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="contact.html" class="btn-cta">無料体験のご予約</a>
+    </div>
+
+    <main>
+
+      <!-- Instagram / LINE カード -->
+      <section class="contact-cards-section">
+        <div class="contact-grid">
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <rect x="4" y="4" width="32" height="32" rx="8" stroke="#1a1a1a" stroke-width="1.4"/>
+                <circle cx="20" cy="20" r="7" stroke="#1a1a1a" stroke-width="1.4"/>
+                <circle cx="29" cy="11" r="2" fill="#1a1a1a"/>
+              </svg>
+            </div>
+            <div class="contact-type">Instagramで見る</div>
+            <div class="contact-desc">@payitforwardjujitsu</div>
+            <a href="https://www.instagram.com/payitforwardjiujitsu?igsh=d3Uzd296cXIxdXo=" target="_blank" rel="noopener" class="contact-link">
+              フォローする
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#1a1a1a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <div class="contact-card line-card">
+            <div class="contact-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M20 9c-8.28 0-15 5.37-15 12 0 5.56 4.13 10.34 10.02 11.94.38.1.9.33 1.04.67.12.3.07.78.04 1.1l-.18 1.06c-.05.3-.25 1.22 1.08.67 1.33-.56 7.2-4.26 9.86-7.3C28.18 26.85 35 23.18 35 21c0-6.63-6.72-12-15-12z" stroke="white" stroke-width="1.2"/>
+                <circle cx="14" cy="21" r="1.5" fill="white"/>
+                <circle cx="20" cy="21" r="1.5" fill="white"/>
+                <circle cx="26" cy="21" r="1.5" fill="white"/>
+              </svg>
+            </div>
+            <div class="contact-type">LINEで問い合わせ</div>
+            <div class="contact-desc">お気軽にご相談ください</div>
+            <a href="https://lin.ee/XwbbAeM" target="_blank" rel="noopener" class="contact-link">
+              友だち追加
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- フォーム -->
+      <section class="contact-page">
+        <h2 class="section-title">無料体験のご予約・お問い合わせ</h2>
+        <p class="contact-intro">
+          見学・体験のお申し込み、その他のお問い合わせは<br>
+          下記フォームよりお気軽にご連絡ください。
+        </p>
+
+        <form id="contactForm">
+          <div class="form-group">
+            <label class="form-label">お名前<span class="required">必須</span></label>
+            <input type="text" id="name" class="form-input" placeholder="山田 太郎" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">お問い合わせ内容<span class="required">必須</span></label>
+            <textarea id="message" class="form-textarea" placeholder="ご質問・ご要望などをご記入ください" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">連絡先<span class="required">必須</span></label>
+            <input type="text" id="contact" class="form-input" placeholder="メールアドレスまたは電話番号" required>
+          </div>
+
+          <div class="privacy-box">
+            <p>お客様の個人情報は、個人情報に関して適用される法令規範を遵守いたします。<br>
+            お問い合わせ内容や貴重なご意見は、今後の業務の改善並びに参考とさせていただきます。</p>
+            <p style="margin-top:10px;"><a href="privacy.html" target="_blank" style="color:var(--black);border-bottom:1px solid var(--black);">プライバシーポリシー</a>をご一読ください。</p>
+            <label class="privacy-agree">
+              <input type="checkbox" id="privacyCheck">
+              <span>プライバシーポリシーに同意します。</span>
+            </label>
+          </div>
+
+          <div class="form-submit">
+            <button type="button" onclick="sendMail()">メールアプリで送信する</button>
+            <p class="form-note">送信ボタンを押すとメールアプリが起動します。</p>
+          </div>
+        </form>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-logo">
+        <img src="logo.png" alt="ロゴ">
+        <div><div class="footer-logo-name">Pay it Forward</div><div class="footer-logo-tagline">自然豊かな新宿・信濃町の柔術ジム</div></div>
+      </div>
+      <div class="footer-copy">&copy; 2025 Pay it Forward Jiu-Jitsu All Rights Reserved.</div>
+      <div class="footer-sns">
+        <a href="https://www.instagram.com/payitforwardjiujitsu?igsh=d3Uzd296cXIxdXo=" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
+          Instagram
+        </a>
+        <span class="footer-sns-handle">@payitforwardjujitsu</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // ===== ハンバーガー =====
+    var ham = document.getElementById('hamburger');
+    var menu = document.getElementById('mobileMenu');
+    ham.addEventListener('click', function() { ham.classList.toggle('open'); menu.classList.toggle('open'); document.body.classList.toggle('menu-open'); });
+    menu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', function() { ham.classList.remove('open'); menu.classList.remove('open'); document.body.classList.remove('menu-open'); }); });
+
+    // ===== メール送信 =====
+    function sendMail() {
+      var name    = document.getElementById('name').value.trim();
+      var message = document.getElementById('message').value.trim();
+      var contact = document.getElementById('contact').value.trim();
+      var checked = document.getElementById('privacyCheck').checked;
+
+      if (!name || !message || !contact) {
+        alert('すべての項目を入力してください。');
+        return;
+      }
+      if (!checked) {
+        alert('プライバシーポリシーに同意してください。');
+        return;
+      }
+
+      var to      = 'payitforwardjiujitsu@gmail.com';
+      var subject = encodeURIComponent('ジムお問い合わせ');
+      var body    = encodeURIComponent(
+        'お名前: ' + name + '\n\n' +
+        'お問い合わせ内容:\n' + message + '\n\n' +
+        '連絡先: ' + contact
+      );
+
+      window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+    }
+  </script>
+</body>
+</html>

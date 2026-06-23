@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+  <meta name="color-scheme" content="light">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ベーシック・レギュラー・レディース・グラップリング・キッズクラスの週間スケジュール。平日夜・土日も開催。信濃町駅徒歩30秒。">
+  <meta name="keywords" content="柔術,スケジュール,クラス,ベーシック,レギュラー,レディース,キッズ,グラップリング,信濃町">
+  <meta name="robots" content="index, follow">
+  <title>クラススケジュール｜Pay it Forward JIU-JITSU</title>
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="クラススケジュール｜Pay it Forward JIU-JITSU">
+  <meta property="og:description" content="ベーシック・レギュラー・レディース・グラップリング・キッズクラスの週間スケジュール。平日夜・土日も開催。信濃町駅徒歩30秒。">
+  <meta property="og:url" content="https://mrx-lab13.github.io/test/schedule.html">
+  <meta property="og:image" content="https://mrx-lab13.github.io/test/logo.png">
+  <meta property="og:site_name" content="Pay it Forward JIU-JITSU">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="クラススケジュール｜Pay it Forward JIU-JITSU">
+  <meta name="twitter:description" content="ベーシック・レギュラー・レディース・グラップリング・キッズクラスの週間スケジュール。平日夜・土日も開催。信濃町駅徒歩30秒。">
+  <meta name="twitter:image" content="https://mrx-lab13.github.io/test/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- 表示速度最適化 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .schedule-section {
+      padding: 72px 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .schedule-note-top {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 16px;
+    }
+
+    .schedule-holiday-badge {
+      border: 1.5px solid var(--black);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== テーブルラッパー（横スクロール） ===== */
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* ===== スケジュールテーブル ===== */
+    .schedule-table {
+      width: 100%;
+      min-width: 700px;
+      border-collapse: collapse;
+      font-size: 12px;
+      table-layout: fixed;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      border: 1px solid #ccc;
+      text-align: center;
+      vertical-align: middle;
+      padding: 6px 4px;
+      line-height: 1.4;
+    }
+
+    /* ヘッダー行 */
+    .schedule-table thead th {
+      background: var(--black);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 4px;
+      letter-spacing: 0.04em;
+    }
+
+    /* 時間列 */
+    .col-time {
+      background: #f0f0f0;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+      width: 90px;
+    }
+
+    /* 空セル */
+    .empty { background: #fff; }
+
+    /* プライベートレッスン（大きいセル） */
+    .private {
+      background: #e8e8e8;
+      font-size: 13px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    /* クラス色 */
+    .basic    { background: #f5a623; color: #fff; font-weight: 700; }
+    .regular  { background: #5b9bd5; color: #fff; font-weight: 700; }
+    .grappling{ background: #1a1a1a; color: #fff; font-weight: 700; }
+    .ladies   { background: #e91e8c; color: #fff; font-weight: 700; }
+    .kids     { background: #2bb67d; color: #fff; font-weight: 700; }
+    .openmat  { background: #fff; color: #333; font-weight: 500; }
+    .closed   { background: #f5f5f5; color: #999; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; }
+
+    /* ===== 凡例 ===== */
+    .schedule-legend {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      justify-content: center;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .legend-dot {
+      width: 20px;
+      height: 14px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .dot-basic    { background: #f5a623; }
+    .dot-regular  { background: #5b9bd5; }
+    .dot-grappling{ background: #1a1a1a; }
+    .dot-ladies   { background: #e91e8c; }
+    .dot-kids     { background: #2bb67d; }
+
+    .schedule-footnote {
+      font-size: 12px;
+      color: var(--gray-text);
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    /* ===== TABLET ===== */
+    @media (max-width: 1024px) {
+      .schedule-section { padding: 56px 24px; }
+    }
+
+    /* ===== SP ===== */
+    @media (max-width: 768px) {
+      .schedule-section { padding: 40px 16px; }
+      .schedule-legend { gap: 12px; }
+    }
+
+    /* ===== クラス説明 ===== */
+    .class-desc-section {
+      margin-top: 56px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .class-desc-item {
+      border-bottom: 1px solid var(--gray-mid);
+      padding: 28px 0;
+    }
+
+    .class-desc-item:first-child {
+      border-top: 1px solid var(--gray-mid);
+    }
+
+    .class-desc-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .class-desc-tag {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 4px 14px;
+      color: #fff;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .basic-header .class-desc-tag    { background: #f5a623; }
+    .regular-header .class-desc-tag  { background: #5b9bd5; }
+    .ladies-header .class-desc-tag   { background: #e91e8c; }
+    .grappling-header .class-desc-tag{ background: #1a1a1a; }
+    .kids-header .class-desc-tag     { background: #2bb67d; }
+
+    .class-desc-target {
+      font-size: 12px;
+      color: var(--gray-text);
+      letter-spacing: 0.04em;
+    }
+
+    .class-desc-body {
+      font-size: 14px;
+      line-height: 2.1;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .class-desc-section { margin-top: 40px; }
+      .class-desc-item { padding: 22px 0; }
+      .class-desc-tag { font-size: 13px; }
+      .class-desc-body { font-size: 13px; }
+    }
+
+    .swipe-hint {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .swipe-hint { display: flex; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <header class="site-header">
+      <a href="index.html" class="site-logo">
+        <img src="logo.png" alt="Pay it Forward Jiu-Jitsu ロゴ">
+        <div><div class="logo-text">Pay it Forward</div><div class="logo-sub">— JIU-JITSU —</div></div>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">ホーム</a>
+        <a href="concept.html">コンセプト</a>
+        <a href="schedule.html" class="active">クラススケジュール</a>
+        <a href="instructor.html">インストラクター</a>
+        <a href="access.html">アクセス</a>
+        <a href="pricing.html">料金プラン</a>
+        <a href="news.html">お知らせ</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="contact.html" class="btn-cta">無料体験のご予約</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">ホーム</a>
+      <a href="concept.html">コンセプト</a>
+      <a href="schedule.html">クラススケジュール</a>
+      <a href="instructor.html">インストラクター</a>
+      <a href="access.html">アクセス</a>
+      <a href="pricing.html">料金プラン</a>
+      <a href="news.html">お知らせ</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="contact.html" class="btn-cta">無料体験のご予約</a>
+    </div>
+
+    <main>
+      <section class="schedule-section">
+        <h2 class="section-title">クラススケジュール</h2>
+
+        <div class="schedule-note-top">
+          <span class="schedule-holiday-badge">祝日は休み</span>
+        </div>
+
+        <div class="swipe-hint">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#999" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          右にスライド
+        </div>
+        <div class="table-wrapper">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>月</th>
+                <th>火</th>
+                <th>水</th>
+                <th>木</th>
+                <th>金</th>
+                <th>土</th>
+                <th>日</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- 10:00-16:00 プライベート / 土日午前 -->
+              <tr>
+                <td class="col-time">10:00<br>〜<br>11:00</td>
+                <td class="private" rowspan="3" colspan="5">10:00-16:00<br>プライベートレッスン</td>
+                <td class="regular">10:00-11:00<br>レギュラー</td>
+                <td class="regular">10:00-11:00<br>レギュラー</td>
+              </tr>
+
+              <tr>
+                <td class="col-time">11:00<br>〜<br>11:30</td>
+                <td class="openmat">11:00-11:30<br>オープンマット</td>
+                <td class="grappling">11:00-12:00<br>柔術スパーリング</td>
+              </tr>
+
+              <tr>
+                <td class="col-time">11:30<br>〜<br>12:30</td>
+                <td class="grappling">11:30-12:30<br>グラップリング</td>
+                <td class="empty"></td>
+              </tr>
+
+              <!-- 空白帯 -->
+              <tr>
+                <td class="col-time">12:30<br>〜<br>13:00</td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="openmat">12:30-13:00<br>オープンマット</td>
+              </tr>
+
+              <!-- KIDS -->
+              <tr>
+                <td class="col-time">17:30<br>〜<br>18:15</td>
+                <td class="empty"></td>
+                <td class="kids">17:30-18:15<br>KIDS</td>
+                <td class="empty"></td>
+                <td class="kids">17:30-18:15<br>KIDS</td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+              </tr>
+
+              <!-- 19:30〜ベーシック/レギュラー -->
+              <tr>
+                <td class="col-time">19:30<br>〜<br>20:30</td>
+                <td class="basic">19:30-20:15<br>ベーシック</td>
+                <td class="regular">19:30-20:30<br>レギュラー</td>
+                <td class="basic">19:30-20:15<br>ベーシック</td>
+                <td class="regular">19:30-20:30<br>レギュラー</td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+              </tr>
+
+              <!-- オープンマット -->
+              <tr>
+                <td class="col-time">20:15<br>〜<br>20:45</td>
+                <td class="openmat">20:15-20:30<br>オープンマット</td>
+                <td class="openmat">20:30-20:45<br>オープンマット</td>
+                <td class="openmat">20:15-20:30<br>オープンマット</td>
+                <td class="openmat">20:30-20:45<br>オープンマット</td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+              </tr>
+
+              <!-- 20:30〜レギュラー/ベーシック/グラップリング -->
+              <tr>
+                <td class="col-time">20:30<br>〜<br>21:30</td>
+                <td class="regular">20:30-21:30<br>レギュラー</td>
+                <td class="basic">20:45-21:30<br>ベーシック</td>
+                <td class="regular">20:30-21:30<br>レギュラー</td>
+                <td class="basic">20:45-21:30<br>ベーシック</td>
+                <td class="grappling">20:30-21:30<br>グラップリング</td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+              </tr>
+
+              <!-- CLOSED -->
+              <tr>
+                <td colspan="8" class="closed">CLOSED</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 凡例 -->
+        <div class="schedule-legend">
+          <div class="legend-item"><span class="legend-dot dot-basic"></span>ベーシック</div>
+          <div class="legend-item"><span class="legend-dot dot-regular"></span>レギュラー</div>
+          <div class="legend-item"><span class="legend-dot dot-grappling"></span>グラップリング</div>
+          <div class="legend-item"><span class="legend-dot dot-kids"></span>KIDSクラス</div>
+        </div>
+
+        <p class="schedule-footnote">※ スケジュールは変更になる場合があります。</p>
+
+        <!-- クラス説明 -->
+        <div class="class-desc-section">
+
+          <div class="class-desc-item">
+            <div class="class-desc-header basic-header">
+              <span class="class-desc-tag">ベーシッククラス</span>
+              <span class="class-desc-target">まずはここから</span>
+            </div>
+            <p class="class-desc-body">ブラジリアン柔術の基本となる体の動かし方や、安全な受身、代表的なテクニックをゆっくり丁寧に学ぶクラスです。運動経験がない方や体力に自信のない方でも、怪我なく安心してご参加いただけます。柔術の楽しさに触れてみてください。</p>
+          </div>
+
+          <div class="class-desc-item">
+            <div class="class-desc-header regular-header">
+              <span class="class-desc-tag">レギュラークラス</span>
+              <span class="class-desc-target">オールレベル</span>
+            </div>
+            <p class="class-desc-body">ブラジリアン柔術の技術をより実践的に学ぶためのクラスです。テクニック練習に加え、スパーリングも行います。基礎を身につけた方はもちろん、試合出場を目指す方まで、それぞれのレベルに合わせて取り組むことができます。</p>
+          </div>
+
+
+          <div class="class-desc-item">
+            <div class="class-desc-header grappling-header">
+              <span class="class-desc-tag">グラップリングクラス</span>
+              <span class="class-desc-target">NOGI</span>
+            </div>
+            <p class="class-desc-body">柔術着を着用せず、ラッシュガードやショーツ（ポケット・ファスナー不可）で行うクラスです。道着を掴めないため、よりスピーディーでダイナミックな展開や、テイクダウン、滑らかなポジション移行の技術が身につきます。マスター世代・女性も安心してご参加いただけます。</p>
+          </div>
+
+          <div class="class-desc-item">
+            <div class="class-desc-header kids-header">
+              <span class="class-desc-tag">キッズクラス</span>
+              <span class="class-desc-target">小学6年生まで</span>
+            </div>
+            <p class="class-desc-body">楽しみながら身体を動かし、柔術を通じて運動能力やコミュニケーション能力を育むクラスです。柔術の技術だけでなく、礼儀や思いやり、自分で考えて行動する力も大切に指導いたします。成功体験を積み重ねることで自信を身につけ、困難にも挑戦できる強い心を養います。<br><br>運動が苦手なお子さまや、習い事が初めてのお子さまも安心してご参加いただけます。指導にあたる代表の中井は、これまで6年間にわたり小学生の育成に携わる仕事をしてきました。一人ひとりの成長に寄り添い、安全面には徹底的に配慮して指導いたします。</p>
+          </div>
+
+        </div>
+
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-logo">
+        <img src="logo.png" alt="ロゴ">
+        <div><div class="footer-logo-name">Pay it Forward</div><div class="footer-logo-tagline">自然豊かな新宿・信濃町の柔術ジム</div></div>
+      </div>
+      <div class="footer-copy">&copy; 2025 Pay it Forward Jiu-Jitsu All Rights Reserved.</div>
+      <div class="footer-sns">
+        <a href="https://www.instagram.com/payitforwardjiujitsu?igsh=d3Uzd296cXIxdXo=" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
+          Instagram
+        </a>
+        <span class="footer-sns-handle">@payitforwardjujitsu</span>
+      </div>
+    </footer>
+
+  </div>
+  <script>
+    var ham = document.getElementById('hamburger');
+    var menu = document.getElementById('mobileMenu');
+    ham.addEventListener('click', function() { ham.classList.toggle('open'); menu.classList.toggle('open'); document.body.classList.toggle('menu-open'); });
+    menu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', function() { ham.classList.remove('open'); menu.classList.remove('open'); document.body.classList.remove('menu-open'); }); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+  <meta name="color-scheme" content="light">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pay it Forward JIU-JITSUからのお知らせ・最新情報。オープン情報、体験会、イベントなど随時更新。">
+  <meta name="keywords" content="お知らせ,ニュース,柔術,信濃町,オープン,体験会">
+  <meta name="robots" content="index, follow">
+  <title>お知らせ｜Pay it Forward JIU-JITSU</title>
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="お知らせ｜Pay it Forward JIU-JITSU">
+  <meta property="og:description" content="Pay it Forward JIU-JITSUからのお知らせ・最新情報。オープン情報、体験会、イベントなど随時更新。">
+  <meta property="og:url" content="https://mrx-lab13.github.io/test/news.html">
+  <meta property="og:image" content="https://mrx-lab13.github.io/test/logo.png">
+  <meta property="og:site_name" content="Pay it Forward JIU-JITSU">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="お知らせ｜Pay it Forward JIU-JITSU">
+  <meta name="twitter:description" content="Pay it Forward JIU-JITSUからのお知らせ・最新情報。オープン情報、体験会、イベントなど随時更新。">
+  <meta name="twitter:image" content="https://mrx-lab13.github.io/test/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- 表示速度最適化 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .news-section {
+      padding: 72px 40px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* ===== 月別アーカイブ ===== */
+    .news-month {
+      margin-bottom: 56px;
+    }
+
+    .news-month-heading {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gray-text);
+      margin-bottom: 0;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .news-list {
+      list-style: none;
+    }
+
+    .news-item a {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 24px;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--gray-mid);
+      transition: opacity 0.2s;
+    }
+
+    .news-item a:hover { opacity: 0.55; }
+
+    .news-date {
+      font-size: 12px;
+      color: var(--gray-text);
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .news-title {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--black);
+    }
+
+    .news-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    /* ローディング・エラー */
+    .news-loading {
+      text-align: center;
+      padding: 64px 0;
+      font-size: 13px;
+      color: var(--gray-text);
+    }
+
+    @media (max-width: 768px) {
+      .news-section { padding: 40px 20px; }
+
+      .news-item a {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 18px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <header class="site-header">
+      <a href="index.html" class="site-logo">
+        <img src="logo.png" alt="Pay it Forward Jiu-Jitsu ロゴ">
+        <div><div class="logo-text">Pay it Forward</div><div class="logo-sub">— JIU-JITSU —</div></div>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">ホーム</a>
+        <a href="concept.html">コンセプト</a>
+        <a href="schedule.html">クラススケジュール</a>
+        <a href="instructor.html">インストラクター</a>
+        <a href="access.html">アクセス</a>
+        <a href="pricing.html">料金プラン</a>
+        <a href="news.html" class="active">お知らせ</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="contact.html" class="btn-cta">無料体験のご予約</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">ホーム</a>
+      <a href="concept.html">コンセプト</a>
+      <a href="schedule.html">クラススケジュール</a>
+      <a href="instructor.html">インストラクター</a>
+      <a href="access.html">アクセス</a>
+      <a href="pricing.html">料金プラン</a>
+      <a href="news.html">お知らせ</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="contact.html" class="btn-cta">無料体験のご予約</a>
+    </div>
+
+    <main>
+      <section class="news-section">
+        <h2 class="section-title">お知らせ</h2>
+        <div id="newsContainer">
+          <p class="news-loading">読み込み中...</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-logo">
+        <img src="logo.png" alt="ロゴ">
+        <div><div class="footer-logo-name">Pay it Forward</div><div class="footer-logo-tagline">自然豊かな新宿・信濃町の柔術ジム</div></div>
+      </div>
+      <div class="footer-copy">&copy; 2025 Pay it Forward Jiu-Jitsu All Rights Reserved.</div>
+      <div class="footer-sns">
+        <a href="https://www.instagram.com/payitforwardjiujitsu?igsh=d3Uzd296cXIxdXo=" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>Instagram</a>
+        <span class="footer-sns-handle">@payitforwardjujitsu</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // ===== ハンバーガー =====
+    var ham = document.getElementById('hamburger');
+    var menu = document.getElementById('mobileMenu');
+    ham.addEventListener('click', function() {
+      ham.classList.toggle('open');
+      menu.classList.toggle('open');
+      document.body.classList.toggle('menu-open');
+    });
+    menu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        ham.classList.remove('open');
+        menu.classList.remove('open');
+        document.body.classList.remove('menu-open');
+      });
+    });
+
+    // ===== お知らせデータ =====
+    const NEWS_DATA = [
+  {
+    "id": 1,
+    "title": "Pay it Forward Jiu-Jitsu オープン決定",
+    "date": "2026-05-07",
+    "content": "この度、東京・信濃町にて「Pay it Forward Jiu-Jitsu」のオープンが正式に決定いたしました。\n\nはじめての方も、女性も、キッズも、50代以上の方も。それぞれのペースで楽しく強くなれる場所を目指します。\n\nオープン日・体験会の詳細については順次お知らせいたします。\nぜひInstagramやLINEでの最新情報をお見逃しなく。"
+  },
+  {
+    "id": 2,
+    "title": "オープン準備スタート",
+    "date": "2026-05-17",
+    "content": "本日よりオープンに向けた準備を本格的にスタートしました。\n\n道場の整備、スケジュール調整、体験会の企画など、鋭意準備中です。\n\n無料体験のお申し込みは「お問い合わせ」ページよりお気軽にどうぞ。\nオープンまで今しばらくお待ちください。"
+  },
+  {
+    "id": 3,
+    "title": "ジムの近くの歩道橋からの眺め",
+    "date": "2026-05-19",
+    "thumbnail": "news01.jpg",
+    "content": "ジムの近くの有名な歩道橋です！\n\nジムの準備の最中にお散歩。\n\n良いジムを作って皆さんをお待ちしております。"
+  },
+  {
+    "id": 4,
+    "title": "プレオープン＆グランドオープンのお知らせ",
+    "date": "2026-06-22",
+    "thumbnail": "news02.jpg",
+    "content": "7月28日（火）〜31日（金） プレオープン\n8月1日（土） グランドオープン\n\nいよいよ、Pay it Forward JIU-JITSUがオープンします！\n\n7月28日（火）から31日（金）までの4日間は「プレオープン期間」として、体験レッスンや見学を随時受け付けております。\n\nそして8月1日（土）はいよいよグランドオープン！当日はお披露目会として、体験レッスン・施設見学・インストラクターとの交流など、楽しいイベントを予定しています。\n\n「ちょっと気になっていた」「柔術をやってみたかった」という方、ぜひこの機会に遊びにいらしてください！\n\n皆さんとマットの上でお会いできることを楽しみにしております。\n\n— New Challenge, Stronger Together. —"
+  }
+];
+
+    // ===== 一覧表示 =====
+    function formatDate(s) {
+      var d = new Date(s);
+      return d.getFullYear() + '.' + String(d.getMonth()+1).padStart(2,'0') + '.' + String(d.getDate()).padStart(2,'0');
+    }
+    function getMonthKey(s) {
+      var d = new Date(s);
+      return d.getFullYear() + '年' + (d.getMonth()+1) + '月';
+    }
+
+    var data = NEWS_DATA.slice().sort(function(a,b){ return new Date(b.date) - new Date(a.date); });
+    var groups = {};
+    var order = [];
+    data.forEach(function(item) {
+      var key = getMonthKey(item.date);
+      if (!groups[key]) { groups[key] = []; order.push(key); }
+      groups[key].push(item);
+    });
+
+    var container = document.getElementById('newsContainer');
+    container.innerHTML = '';
+    order.forEach(function(month) {
+      var sec = document.createElement('div');
+      sec.className = 'news-month';
+      var h3 = document.createElement('h3');
+      h3.className = 'news-month-heading';
+      h3.textContent = month;
+      sec.appendChild(h3);
+      var ul = document.createElement('ul');
+      ul.className = 'news-list';
+      groups[month].forEach(function(item) {
+        var li = document.createElement('li');
+        li.className = 'news-item';
+        li.innerHTML = '<a href="news-detail.html?id=' + item.id + '"><span class="news-date">' + formatDate(item.date) + '</span><span class="news-title">' + item.title + '</span></a>';
+        ul.appendChild(li);
+      });
+      sec.appendChild(ul);
+      container.appendChild(sec);
+    });
+  </script>
+</body>
+</html>
