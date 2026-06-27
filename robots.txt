@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://mrx-lab13.github.io/test/sitemap.xml
