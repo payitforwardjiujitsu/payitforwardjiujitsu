@@ -232,6 +232,10 @@
       container.innerHTML = '<p class="detail-loading">記事が見つかりませんでした。</p>';
     } else {
       document.title = item.title + ' | Pay it Forward Jiu-Jitsu';
+      var canon = document.createElement('link');
+      canon.rel = 'canonical';
+      canon.href = 'https://payitforwardjiujitsu.com/news-detail.html?id=' + item.id;
+      document.head.appendChild(canon);
       var body = item.content.replace(/\n/g, '<br>');
       var imgHtml = item.thumbnail ? '<img src="' + item.thumbnail + '" alt="' + item.title + '" class="detail-img" loading="lazy">' : '';
       container.innerHTML =
