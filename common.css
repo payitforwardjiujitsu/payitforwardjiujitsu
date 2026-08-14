@@ -26,14 +26,17 @@ body {
   color: #1a1a1a;
   background-color: #ffffff;
   line-height: 1.7;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ダークモード完全無効化 */
+/* ダークモード完全無効化
+   ※ここに `* { background-color: inherit }` を書かないこと。
+     全要素が親の背景色を継承してしまい、写真の上に乗せた文字ブロックが
+     不透明なベタ塗りの箱になってヒーローが崩れる（iPhoneのダークモードで発生） */
 @media (prefers-color-scheme: dark) {
   html { color-scheme: light; }
   body { background-color: #ffffff !important; color: #1a1a1a !important; }
-  * { color: inherit; background-color: inherit; }
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -250,10 +253,19 @@ body.menu-open { overflow: hidden; }
    ============================================================ */
 
 /* ---------- Tablet ---------- */
-@media (max-width: 1024px) {
+/* 1200px以下：ヘッダーが横にはみ出して横スクロールが出るのを防ぐ */
+@media (max-width: 1200px) {
   .site-header { padding: 0 24px; }
   .site-nav { gap: 14px; }
   .site-nav a { font-size: 12px; }
+  .btn-cta { padding: 9px 12px; font-size: 11px; }
+}
+
+@media (max-width: 1024px) {
+  .site-header { padding: 0 16px; }
+  .site-nav { gap: 10px; }
+  .site-nav a { font-size: 11px; }
+  .site-header .btn-cta { display: none; }
   .site-footer { padding: 24px 24px; }
   .section-title { font-size: 24px; }
 }

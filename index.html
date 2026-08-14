@@ -60,28 +60,126 @@
 
   <link rel="stylesheet" href="common.css">
   <style>
-    /* ===== HERO ===== */
+    /* ===== HERO =====
+       ※Safari対策：.heroにflexを使わず、位置指定も inset ではなく top/right/bottom/left の
+         個別指定にしている。ここを inset や flex に戻すと iOS Safari で左右分割に崩れる。 */
     .hero {
       position: relative;
-      min-height: 540px;
+      min-height: clamp(560px, 42vw, 760px);
       background: #f0ede8;
       overflow: hidden;
+      padding: 72px 0;
+    }
+
+    /* PCは写真を画面いっぱい・左端まで見せる。文字の裏に敷き物は置かない */
+    .hero-slider {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* 下端のなじませ＋文字の範囲に白のもや（左が濃く、右に向かって消える） */
+    .hero-veil {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(240,237,232,0) 78%, rgba(240,237,232,0.30) 100%),
+        linear-gradient(90deg,
+          rgba(255,255,255,0.72) 0%,
+          rgba(255,255,255,0.66) 30%,
+          rgba(255,255,255,0.44) 46%,
+          rgba(255,255,255,0.20) 60%,
+          rgba(255,255,255,0.05) 68%,
+          rgba(255,255,255,0) 76%);
     }
 
     .hero-img {
       position: absolute;
-      right: 0; top: 0;
-      width: 54%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
+      object-position: center 35%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    /* ▼▼ 写真ごとの表示位置（調整はここだけ触ればOK） ▼▼
+       PC・タブレット：上下が切れるので「縦位置」。数字が小さいほど写真の上側が見える
+       スマホ縦：左右が切れるので「横位置」。数字が小さいほど写真の左側が見える */
+    @media (min-width: 769px) {
+      .hero-img[src="hero5.jpg"] { object-position: center 55%; } /* 道場全景 */
+      .hero-img[src="hero1.jpg"] { object-position: center 35%; } /* 拳合わせ */
+      .hero-img[src="hero2.jpg"] { object-position: center 40%; } /* スパーリング */
+      .hero-img[src="hero3.jpg"] { object-position: center 45%; } /* 指導風景 */
+      .hero-img[src="hero4.jpg"] { object-position: center 45%; } /* 窓辺の3人 */
+    }
+
+    @media (max-width: 768px) {
+      .hero-img[src="hero5.jpg"] { object-position: 60% center; }
+      .hero-img[src="hero1.jpg"] { object-position: 50% center; }
+      .hero-img[src="hero2.jpg"] { object-position: 55% center; }
+      .hero-img[src="hero3.jpg"] { object-position: 55% center; }
+      .hero-img[src="hero4.jpg"] { object-position: 50% center; }
+    }
+    /* ▲▲ 写真ごとの表示位置ここまで ▲▲ */
+
+    /* PC(1025px以上)のみ：小さい文字を読みやすいサイズに上げる */
+    @media (min-width: 1025px) {
+      .hero .hero-content { max-width: 620px; }
+      .hero .hero-features li {
+        font-size: 15px;
+        color: #333;
+        padding: 11px 0;
+      }
+      .hero .hero-sub-en { font-size: 19px; }
+    }
+
+    /* 769px以上（スマホ横向き・タブレット・PC）のみ：敷き物が無いぶん、黒文字をクリーム色(#f0ede8)の1pxフチ＋淡い光で浮かせる */
+    @media (min-width: 769px) {
+      .hero-heading {
+        text-shadow:
+          1px 0 0 #f0ede8, -1px 0 0 #f0ede8, 0 1px 0 #f0ede8, 0 -1px 0 #f0ede8,
+          1px 1px 0 #f0ede8, -1px -1px 0 #f0ede8, 1px -1px 0 #f0ede8, -1px 1px 0 #f0ede8,
+          0 0 8px rgba(240,237,232,0.95), 0 0 18px rgba(240,237,232,0.75);
+      }
+      .hero-sub-en,
+      .hero-features li,
+      .hero-info-item {
+        text-shadow:
+          1px 0 0 #f0ede8, -1px 0 0 #f0ede8, 0 1px 0 #f0ede8, 0 -1px 0 #f0ede8,
+          1px 1px 0 #f0ede8, -1px -1px 0 #f0ede8, 1px -1px 0 #f0ede8, -1px 1px 0 #f0ede8,
+          0 0 6px rgba(240,237,232,0.95), 0 0 14px rgba(240,237,232,0.8);
+      }
+    }
+
+    .hero-img.is-active { opacity: 1; }
+    .hero-img.is-hidden { display: none; }
+
+    /* 動きを減らす設定のユーザーはフェードなし（1枚目固定はJS側で制御） */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-img { transition: none; }
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      padding: 60px 0 60px 48px;
-      max-width: 480px;
+      background: transparent; /* 写真の上に乗るので必ず透明。ベタ塗りにしないこと */
+      padding: 56px 0 56px 48px;
+      max-width: 500px;
     }
 
     .hero-heading {
@@ -215,10 +313,19 @@
       border-top: 1px solid var(--gray-mid);
     }
 
-    /* ===== TABLET ===== */
+    /* ===== TABLET / スマホ横向き（769〜1024px：PCと同じ全面表示。文字の幅だけ狭める） ===== */
     @media (max-width: 1024px) {
-      .hero-content { padding: 48px 0 48px 32px; }
-      .hero-heading { font-size: 44px; }
+      .hero {
+        min-height: clamp(420px, 52vw, 620px);
+      }
+
+      .hero-content {
+        padding: 40px 0 40px 28px;
+        max-width: 400px;
+      }
+
+      .hero-heading { font-size: 36px; }
+      .hero-features li { font-size: 12px; padding: 7px 0; }
       .features { padding: 48px 24px; }
       .features-grid { gap: 28px; }
     }
@@ -227,16 +334,22 @@
     @media (max-width: 768px) {
       .hero {
         min-height: auto;
-        display: flex;
-        flex-direction: column;
+        padding: 0;
       }
 
-      .hero-img {
+      /* SPは全面敷きをやめて、画像→テキストの縦並びに戻す */
+      .hero-slider {
         position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
         width: 100%;
         height: 280px;
-        right: auto; top: auto;
       }
+
+      .hero-img { object-position: center center; }
+      .hero-veil { display: none; }
 
       .hero-content {
         padding: 36px 20px;
@@ -495,8 +608,17 @@
     <main>
 
       <!-- HERO -->
-      <section class="hero">
-        <img src="hero.jpg" alt="柔術の練習風景" class="hero-img">
+      <!-- BUILD-ID: hero-fullbleed-v11 -->
+      <section class="hero" data-build="hero-fullbleed-v11">
+        <div class="hero-slider" id="heroSlider">
+          <!-- 表示順：道場全景 → 拳合わせ → スパーリング → 指導風景 → 窓辺の3人 -->
+          <img src="hero5.jpg" alt="Pay it Forward JIU-JITSU の道場" class="hero-img hero-slide is-active">
+          <img src="hero1.jpg" alt="柔術の練習風景" class="hero-img hero-slide">
+          <img src="hero2.jpg" alt="" class="hero-img hero-slide">
+          <img src="hero3.jpg" alt="" class="hero-img hero-slide">
+          <img src="hero4.jpg" alt="" class="hero-img hero-slide">
+        </div>
+        <div class="hero-veil"></div>
         <div class="hero-content">
           <h1 class="hero-heading">柔術で、<br>心も体も<br>もっと自由に。</h1>
           <p class="hero-sub-en">Pay it Forward Jiu-Jitsu</p>
@@ -514,7 +636,7 @@
               無料体験に申し込む
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <div class="hero-badge">2026年<br>OPEN<br>予定</div>
+            <div class="hero-badge">2026.8.1<br>GRAND<br>OPEN</div>
           </div>
         </div>
       </section>
@@ -574,7 +696,7 @@
           <div class="footer-logo-tagline">自然豊かな新宿・信濃町の柔術ジム</div>
         </div>
       </div>
-      <div class="footer-copy">&copy; 2025 Pay it Forward Jiu-Jitsu All Rights Reserved.</div>
+      <div class="footer-copy">&copy; 2026 Pay it Forward Jiu-Jitsu All Rights Reserved.</div>
       <div class="footer-sns">
         <a href="https://www.instagram.com/payitforwardjiujitsu?igsh=d3Uzd296cXIxdXo=" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
@@ -647,6 +769,65 @@
         li.className = 'news-top-item';
         li.innerHTML = '<a href="news-detail.html?id=' + item.id + '"><span class="news-top-date">' + fmt(item.date) + '</span><span class="news-top-name">' + item.title + '</span></a>';
         list.appendChild(li);
+      });
+    })();
+  
+    // ===== ヒーロースライドショー =====
+    // hero1.jpg〜hero5.jpg のうち、読み込めたものだけを順に表示する。
+    (function() {
+      var INTERVAL = 3000; // 切替間隔ms（変更はここだけ）
+      var slider = document.getElementById('heroSlider');
+      if (!slider) return;
+
+      var imgs = Array.prototype.slice.call(slider.querySelectorAll('.hero-slide'));
+      if (!imgs.length) return;
+
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var settled = 0;
+      var current = 0; // 1枚目にis-activeが付いている前提
+
+      function ok(img) { return !img.dataset.broken; }
+
+      function fail(img) {
+        img.dataset.broken = '1';
+        img.classList.add('is-hidden');
+        img.classList.remove('is-active');
+      }
+
+      function show(i) {
+        if (current === i) return;
+        if (current >= 0) imgs[current].classList.remove('is-active');
+        imgs[i].classList.add('is-active');
+        current = i;
+      }
+
+      function settle() {
+        settled++;
+        if (settled < imgs.length) return; // 全枚数の成否が確定してから判定
+
+        var valid = imgs.filter(ok);
+        if (!valid.length) return;
+        if (!ok(imgs[current])) {          // 1枚目が無い場合は次の有効画像へ
+          current = -1;
+          show(imgs.indexOf(valid[0]));
+        }
+        if (reduce || valid.length < 2) return; // 動き抑制設定 or 有効1枚なら固定
+
+        setInterval(function() {
+          var next = current;
+          do { next = (next + 1) % imgs.length; } while (!ok(imgs[next]) && next !== current);
+          if (next !== current) show(next);
+        }, INTERVAL);
+      }
+
+      imgs.forEach(function(img) {
+        if (img.complete) {
+          if (!img.naturalWidth) fail(img);
+          settle();
+        } else {
+          img.addEventListener('load', settle);
+          img.addEventListener('error', function() { fail(img); settle(); });
+        }
       });
     })();
   </script>
