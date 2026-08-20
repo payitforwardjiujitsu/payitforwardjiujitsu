@@ -97,6 +97,29 @@
       line-height: 2;
     }
 
+    /* ===== Googleフォーム埋め込み =====
+       別ドメインなので中身の見た目はCSSで変えられない（枠の外側だけ調整可能）。
+       高さは自動で伸びないので、フォームの質問を増やしたらここの数値も上げること。 */
+    .gform-wrap {
+      margin-top: 8px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .gform-frame {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: 1687px;
+      border: 0;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      /* スマホは文字が折り返して縦に伸びるぶん、高さを多めに確保 */
+      .gform-frame { height: 1950px; }
+    }
+
     .form-group { margin-bottom: 22px; }
 
     .form-label {
@@ -292,37 +315,18 @@
           下記フォームよりお気軽にご連絡ください。
         </p>
 
-        <form id="contactForm">
-          <div class="form-group">
-            <label class="form-label">お名前<span class="required">必須</span></label>
-            <input type="text" id="name" class="form-input" placeholder="山田 太郎" required>
-          </div>
+        <div class="gform-wrap">
+          <iframe
+            class="gform-frame"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfJBfzNG-zy2U00AJTsyU1TfiRMi1cuFugMRI0EF5gisIdOOA/viewform?embedded=true"
+            title="無料体験のご予約・お問い合わせフォーム"
+            loading="lazy">読み込んでいます…</iframe>
+        </div>
 
-          <div class="form-group">
-            <label class="form-label">お問い合わせ内容<span class="required">必須</span></label>
-            <textarea id="message" class="form-textarea" placeholder="ご質問・ご要望などをご記入ください" required></textarea>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">連絡先<span class="required">必須</span></label>
-            <input type="text" id="contact" class="form-input" placeholder="メールアドレスまたは電話番号" required>
-          </div>
-
-          <div class="privacy-box">
-            <p>お客様の個人情報は、個人情報に関して適用される法令規範を遵守いたします。<br>
-            お問い合わせ内容や貴重なご意見は、今後の業務の改善並びに参考とさせていただきます。</p>
-            <p style="margin-top:10px;"><a href="privacy.html" target="_blank" style="color:var(--black);border-bottom:1px solid var(--black);">プライバシーポリシー</a>をご一読ください。</p>
-            <label class="privacy-agree">
-              <input type="checkbox" id="privacyCheck">
-              <span>プライバシーポリシーに同意します。</span>
-            </label>
-          </div>
-
-          <div class="form-submit">
-            <button type="button" onclick="sendMail()">メールアプリで送信する</button>
-            <p class="form-note">送信ボタンを押すとメールアプリが起動します。</p>
-          </div>
-        </form>
+        <p class="form-note" style="margin-top:18px;">
+          送信いただいた個人情報は、お問い合わせへの対応および今後のサービス改善のために利用いたします。<br>
+          <a href="privacy.html" target="_blank" rel="noopener" style="color:var(--black);border-bottom:1px solid var(--black);">プライバシーポリシー</a>もあわせてご確認ください。
+        </p>
       </section>
 
     </main>
@@ -332,7 +336,7 @@
         <img src="logo.png" alt="ロゴ">
         <div><div class="footer-logo-name">Pay it Forward</div><div class="footer-logo-tagline">自然豊かな新宿・信濃町の柔術ジム</div></div>
       </div>
-      <div class="footer-copy">&copy; 2025 Pay it Forward Jiu-Jitsu All Rights Reserved.</div>
+      <div class="footer-copy">&copy; 2026 Pay it Forward Jiu-Jitsu All Rights Reserved.</div>
       <div class="footer-sns">
         <a href="https://www.instagram.com/payitforwardjiujitsu?igsh=d3Uzd296cXIxdXo=" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
@@ -350,33 +354,6 @@
     var menu = document.getElementById('mobileMenu');
     ham.addEventListener('click', function() { ham.classList.toggle('open'); menu.classList.toggle('open'); document.body.classList.toggle('menu-open'); });
     menu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', function() { ham.classList.remove('open'); menu.classList.remove('open'); document.body.classList.remove('menu-open'); }); });
-
-    // ===== メール送信 =====
-    function sendMail() {
-      var name    = document.getElementById('name').value.trim();
-      var message = document.getElementById('message').value.trim();
-      var contact = document.getElementById('contact').value.trim();
-      var checked = document.getElementById('privacyCheck').checked;
-
-      if (!name || !message || !contact) {
-        alert('すべての項目を入力してください。');
-        return;
-      }
-      if (!checked) {
-        alert('プライバシーポリシーに同意してください。');
-        return;
-      }
-
-      var to      = 'payitforwardjiujitsu@gmail.com';
-      var subject = encodeURIComponent('ジムお問い合わせ');
-      var body    = encodeURIComponent(
-        'お名前: ' + name + '\n\n' +
-        'お問い合わせ内容:\n' + message + '\n\n' +
-        '連絡先: ' + contact
-      );
-
-      window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
-    }
   </script>
 </body>
 </html>
