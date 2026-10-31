@@ -306,6 +306,70 @@
       color: #444;
     }
 
+    /* ===== ビジター / レンタル ===== */
+    .pricing-sub-section {
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+
+    .pricing-sub-heading {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding-bottom: 10px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid var(--gray-mid);
+    }
+
+    .pricing-fee-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: baseline;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--gray-mid);
+    }
+
+    .pricing-fee-name {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .pricing-fee-note {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0;
+      color: var(--gray-text);
+      margin-top: 4px;
+    }
+
+    .pricing-fee-price {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .pricing-fee-price .tax {
+      font-size: 11px;
+      font-weight: 400;
+      font-family: var(--font-sans);
+      color: var(--gray-text);
+      margin-left: 4px;
+    }
+
+    .pricing-sub-note {
+      font-size: 12px;
+      line-height: 1.9;
+      color: #333;
+      background: var(--gray-light);
+      border-left: 2px solid var(--black);
+      padding: 12px 16px;
+      margin-top: 18px;
+    }
+
     /* ===== ご入会について ===== */
     .pricing-join {
       max-width: 720px;
@@ -422,6 +486,10 @@
       .pricing-entry { max-width: 100%; }
       .pricing-row { grid-template-columns: 1fr; gap: 8px; }
       .pricing-trial { padding: 28px 20px; }
+      .pricing-sub-section { margin-bottom: 36px; }
+      .pricing-fee-row { grid-template-columns: 1fr; gap: 6px; padding: 14px 0; }
+      .pricing-fee-price { font-size: 19px; }
+      .pricing-sub-note { padding: 12px 14px; }
       .pricing-join { padding-top: 36px; margin-bottom: 36px; }
       .pricing-join-title { font-size: 19px; }
       .pricing-join-lead { margin-bottom: 28px; }
@@ -519,6 +587,38 @@
             <p class="pricing-row-desc">従業員の健康づくりや運動不足解消、チームコミュニケーションの活性化を目的とした法人様向けプログラムです。ブラジリアン柔術を通じて、体力向上はもちろん、ストレス発散やリフレッシュのサポートをいたします。実施人数や頻度、ご要望に応じて貴社オリジナルのプログラムをご提案いたします。健康経営の一環として、ぜひご活用ください。</p>
           </div>
 
+        </div>
+
+        <!-- ビジター -->
+        <div class="pricing-sub-section">
+          <h2 class="pricing-sub-heading">ビジター</h2>
+
+          <div class="pricing-fee-row">
+            <p class="pricing-fee-name">一般</p>
+            <p class="pricing-fee-price">¥4,000<span class="tax">（税込）/ 1回</span></p>
+          </div>
+
+          <div class="pricing-fee-row">
+            <p class="pricing-fee-name">今成柔術アソシエーションメンバー</p>
+            <p class="pricing-fee-price">¥2,000<span class="tax">（税込）/ 1回</span></p>
+          </div>
+
+          <p class="pricing-sub-note">※ 水曜日・木曜日の 19:45〜20:45 のクラスのみビジター利用可能です。</p>
+        </div>
+
+        <!-- レンタル費用 -->
+        <div class="pricing-sub-section">
+          <h2 class="pricing-sub-heading">レンタル費用</h2>
+
+          <div class="pricing-fee-row">
+            <p class="pricing-fee-name">レンタル道着（タオル付き）</p>
+            <p class="pricing-fee-price">¥2,000<span class="tax">（税込）</span></p>
+          </div>
+
+          <div class="pricing-fee-row">
+            <p class="pricing-fee-name">タオル</p>
+            <p class="pricing-fee-price">¥300<span class="tax">（税込）</span></p>
+          </div>
         </div>
 
         <!-- ご入会について -->
