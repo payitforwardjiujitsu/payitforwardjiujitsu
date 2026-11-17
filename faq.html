@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+  <meta name="color-scheme" content="light">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="初心者でも大丈夫？無料体験の持ち物は？更衣室やシャワーは？Pay it Forward JIU-JITSU によくいただくご質問をまとめました。">
+  <meta name="keywords" content="よくある質問,FAQ,柔術,ブラジリアン柔術,無料体験,信濃町,新宿">
+  <meta name="robots" content="index, follow">
+  <title>よくあるご質問｜Pay it Forward JIU-JITSU</title>
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="よくあるご質問｜Pay it Forward JIU-JITSU">
+  <meta property="og:description" content="初心者でも大丈夫？無料体験の持ち物は？更衣室やシャワーは？Pay it Forward JIU-JITSU によくいただくご質問をまとめました。">
+  <meta property="og:url" content="https://payitforwardjiujitsu.com/faq.html">
+  <meta property="og:image" content="https://payitforwardjiujitsu.com/logo.png">
+  <meta property="og:site_name" content="Pay it Forward JIU-JITSU">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="よくあるご質問｜Pay it Forward JIU-JITSU">
+  <meta name="twitter:description" content="初心者でも大丈夫？無料体験の持ち物は？更衣室やシャワーは？Pay it Forward JIU-JITSU によくいただくご質問をまとめました。">
+  <meta name="twitter:image" content="https://payitforwardjiujitsu.com/logo.png">
+
+  <link rel="canonical" href="https://payitforwardjiujitsu.com/faq.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- 表示速度最適化 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .faq-section {
+      padding: 72px 40px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .faq-lead {
+      font-size: 13px;
+      line-height: 2;
+      color: #444;
+      margin-bottom: 44px;
+    }
+
+    .faq-group { margin-bottom: 44px; }
+
+    .faq-group-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding-bottom: 10px;
+      margin-bottom: 4px;
+      border-bottom: 1.5px solid var(--black);
+    }
+
+    .faq-item { border-bottom: 1px solid var(--gray-mid); }
+
+    .faq-item summary {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 18px 0;
+      cursor: pointer;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+      transition: opacity 0.2s;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { opacity: 0.6; }
+
+    .faq-q {
+      flex-shrink: 0;
+      width: 16px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .faq-summary-text { flex: 1; }
+
+    .faq-icon {
+      flex-shrink: 0;
+      position: relative;
+      width: 14px;
+      height: 14px;
+      margin-top: 6px;
+    }
+
+    .faq-icon::before,
+    .faq-icon::after {
+      content: "";
+      position: absolute;
+      background: var(--black);
+      transition: transform 0.2s;
+    }
+
+    .faq-icon::before { left: 0; top: 6px; width: 14px; height: 1.5px; }
+    .faq-icon::after { left: 6px; top: 0; width: 1.5px; height: 14px; }
+    .faq-item[open] .faq-icon::after { transform: scaleY(0); }
+
+    .faq-a {
+      display: flex;
+      gap: 12px;
+      padding: 0 0 22px;
+    }
+
+    .faq-a-mark {
+      flex-shrink: 0;
+      width: 16px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.9;
+      color: var(--gray-text);
+    }
+
+    .faq-a-body {
+      flex: 1;
+      font-size: 13px;
+      line-height: 2;
+      color: #555;
+    }
+
+    .faq-a-body p + p { margin-top: 12px; }
+
+    .faq-a-body a {
+      color: var(--black);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: opacity 0.2s;
+    }
+
+    .faq-a-body a:hover { opacity: 0.6; }
+
+    .faq-contact {
+      background: var(--gray-light);
+      padding: 32px 36px;
+      margin-top: 8px;
+    }
+
+    .faq-contact-title {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .faq-contact-body {
+      font-size: 13px;
+      line-height: 2;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .faq-section { padding: 40px 20px; }
+      .faq-lead { margin-bottom: 32px; }
+      .faq-group { margin-bottom: 32px; }
+      .faq-group-title { font-size: 16px; }
+      .faq-item summary { font-size: 13px; padding: 16px 0; gap: 10px; }
+      .faq-contact { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <header class="site-header">
+      <a href="index.html" class="site-logo">
+        <img src="logo.png" alt="Pay it Forward Jiu-Jitsu ロゴ">
+        <div><div class="logo-text">Pay it Forward</div><div class="logo-sub">— JIU-JITSU —</div></div>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">ホーム</a>
+        <a href="concept.html">コンセプト</a>
+        <a href="schedule.html">クラススケジュール</a>
+        <a href="instructor.html">インストラクター</a>
+        <a href="access.html">アクセス</a>
+        <a href="pricing.html">料金プラン</a>
+        <a href="news.html">お知らせ</a>
+        <a href="faq.html" class="active">FAQ</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="contact.html" class="btn-cta">無料体験のご予約</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">ホーム</a>
+      <a href="concept.html">コンセプト</a>
+      <a href="schedule.html">クラススケジュール</a>
+      <a href="instructor.html">インストラクター</a>
+      <a href="access.html">アクセス</a>
+      <a href="pricing.html">料金プラン</a>
+      <a href="news.html">お知らせ</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="contact.html" class="btn-cta">無料体験のご予約</a>
+    </div>
+
+    <main>
+
+      <section class="faq-section">
+        <h1 class="section-title">よくあるご質問</h1>
+        <p class="faq-lead">Pay it Forward JIU-JITSU によくいただくご質問をまとめました。こちらに掲載のない内容は、お気軽にお問い合わせください。</p>
+
+        <div class="faq-group">
+          <h2 class="faq-group-title">初心者・未経験者について</h2>
+
+          <details class="faq-item" open>
+            <summary>
+              <span class="faq-q">Q</span>
+              <span class="faq-summary-text">柔術や格闘技の経験がなくても大丈夫ですか？</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-a">
+              <span class="faq-a-mark">A</span>
+              <div class="faq-a-body">
+                <p>もちろん大丈夫です。当道場では初心者・未経験者の方にも、基本的な身体の動かし方から丁寧に指導しています。</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Q</span>
+              <span class="faq-summary-text">運動が苦手で、体力にも自信がありません。</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-a">
+              <span class="faq-a-mark">A</span>
+              <div class="faq-a-body">
+                <p>ご自身の体力や運動経験に合わせて練習できます。週1回からでも無理なく始められますので、ご安心ください。</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Q</span>
+              <span class="faq-summary-text">柔術で怪我をすることはありますか？</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-a">
+              <span class="faq-a-mark">A</span>
+              <div class="faq-a-body">
+                <p>柔術は相手と身体が接触するスポーツのため、怪我をする可能性があります。</p>
+                <p>当道場では安全面に十分配慮し、初心者の方にも無理のない練習を心がけています。</p>
+                <p>怪我のリスクを完全になくすことはできませんが、安全に楽しく練習できる環境づくりを大切にしています。</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Q</span>
+              <span class="faq-summary-text">スパーリングや試合への参加は強制ですか？</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-a">
+              <span class="faq-a-mark">A</span>
+              <div class="faq-a-body">
+                <p>いいえ。どちらも強制していません。健康維持、趣味、フィットネス、競技など、それぞれの目的に合わせて柔術を楽しんでいただけます。</p>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <div class="faq-group">
+          <h2 class="faq-group-title">無料体験について</h2>
+
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Q</span>
+              <span class="faq-summary-text">無料体験はできますか？</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-a">
+              <span class="faq-a-mark">A</span>
+              <div class="faq-a-body">
+                <p>はい。柔術未経験者の方を対象に、事前予約制で無料体験を受け付けています。体験後の入会を強制することはありません。</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Q</span>
+              <span class="faq-summary-text">無料体験には何を持っていけばよいですか？</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-a">
+              <span class="faq-a-mark">A</span>
+              <div class="faq-a-body">
+                <p>動きやすい服装、飲み物、タオルをご用意ください。道着の貸し出しについては、予約時にご確認ください。</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Q</span>
+              <span class="faq-summary-text">無料体験のキャンセルや日程変更はできますか？</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-a">
+              <span class="faq-a-mark">A</span>
+              <div class="faq-a-body">
+                <p>はい。必ず前日までにご連絡ください。事前に準備と時間の確保を行っておりますので、当日のキャンセルや無断欠席はお控えください。</p>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <div class="faq-group">
+          <h2 class="faq-group-title">クラス・設備について</h2>
+
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Q</span>
+              <span class="faq-summary-text">女性でも参加できますか？</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-a">
+              <span class="faq-a-mark">A</span>
+              <div class="faq-a-body">
+                <p>もちろんご参加いただけます。当道場は男女合同で練習を行っており、男性とペアを組む機会も多くあります。</p>
+                <p>柔術は相手と身体が密着するスポーツですので、男女問わず身体的な接触を伴う練習があることをご理解のうえ、ご参加ください。</p>
+                <p>なお、女性インストラクターも所属しております。</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Q</span>
+              <span class="faq-summary-text">遅刻や早退はできますか？</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-a">
+              <span class="faq-a-mark">A</span>
+              <div class="faq-a-body">
+                <p>はい。お仕事やご家庭の都合による遅刻・早退は可能です。ただし、練習の妨げにならないようご配慮いただき、必ずインストラクターにお声がけください。</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Q</span>
+              <span class="faq-summary-text">更衣室やシャワーはありますか？</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-a">
+              <span class="faq-a-mark">A</span>
+              <div class="faq-a-body">
+                <p>はい。男女別の更衣室とシャワー設備をご用意しています。</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Q</span>
+              <span class="faq-summary-text">駐輪場・駐車場はありますか？</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-a">
+              <span class="faq-a-mark">A</span>
+              <div class="faq-a-body">
+                <p>当道場専用の駐輪場・駐車場はございません。</p>
+                <p>自転車をご利用の方は、歩道橋下・信濃町駅・交番付近にある有料駐輪場をご利用ください。</p>
+                <p>お車でお越しの方は、当道場が入るビルの隣にあるコインパーキングをご利用いただけます。</p>
+                <p>ビル周辺への無断駐輪・駐車は禁止しております。</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Q</span>
+              <span class="faq-summary-text">ビジター利用はできますか？</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-a">
+              <span class="faq-a-mark">A</span>
+              <div class="faq-a-body">
+                <p>はい。一部の指定クラスに限り、ビジター利用を受け付けています。ご利用の際は、必ず事前に所属道場の許可を得たうえでご参加ください。利用可能なクラスと料金は<a href="pricing.html">料金プラン</a>のページに記載しております。ご不明な点はお気軽にお問い合わせください。</p>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <div class="faq-group">
+          <h2 class="faq-group-title">入会・お手続きについて</h2>
+
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Q</span>
+              <span class="faq-summary-text">入会時に必要なものは何ですか？</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-a">
+              <span class="faq-a-mark">A</span>
+              <div class="faq-a-body">
+                <p>ご入会の際は、身分証明書をご用意ください。また、未成年の方は保護者の署名が必要となります。</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Q</span>
+              <span class="faq-summary-text">休会・退会・コース変更はできますか？</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-a">
+              <span class="faq-a-mark">A</span>
+              <div class="faq-a-body">
+                <p>はい。変更を希望する月の前月10日までにお申し出ください。翌月から適用されます。</p>
+                <p>退会は公式LINEなどのメッセージからお申し出いただけます。書面による手続きは必要ありません。</p>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <div class="faq-contact">
+          <p class="faq-contact-title">解決しない場合は</p>
+          <p class="faq-contact-body">上記で解決しないご質問は、お問い合わせフォームまたは公式LINEよりお気軽にご連絡ください。</p>
+          <a href="contact.html" class="btn-primary" style="margin-top:20px;">
+            お問い合わせはこちら
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-logo">
+        <img src="logo.png" alt="ロゴ">
+        <div><div class="footer-logo-name">Pay it Forward</div><div class="footer-logo-tagline">自然豊かな新宿・信濃町の柔術ジム</div></div>
+      </div>
+      <div class="footer-copy">&copy; 2026 Pay it Forward Jiu-Jitsu All Rights Reserved.</div>
+      <div class="footer-sns">
+        <a href="https://www.instagram.com/payitforwardjiujitsu?igsh=d3Uzd296cXIxdXo=" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
+          Instagram
+        </a>
+        <span class="footer-sns-handle">@payitforwardjujitsu</span>
+      </div>
+    </footer>
+
+  </div>
+  <script>
+    var ham = document.getElementById('hamburger');
+    var menu = document.getElementById('mobileMenu');
+    ham.addEventListener('click', function() { ham.classList.toggle('open'); menu.classList.toggle('open'); document.body.classList.toggle('menu-open'); });
+    menu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', function() { ham.classList.remove('open'); menu.classList.remove('open'); document.body.classList.remove('menu-open'); }); });
+  </script>
+</body>
+</html>
